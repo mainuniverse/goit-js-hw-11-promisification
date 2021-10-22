@@ -13,4 +13,12 @@
 }
 .list__items a {
   text-decoration: none;
+  color: black;
+}
+.list__items a:hover,
+.list__items a:active {
+  color: blue;
+}
+.list__items .current {
+  color: blue;
 }

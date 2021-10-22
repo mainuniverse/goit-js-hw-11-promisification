@@ -8,12 +8,15 @@ const users = [
   { name: 'Lux', active: false },
 ];
 
+// callback chng to promise:
 const toggleUserState = (allUsers, userName, callback) => {
-  const updatedUsers = allUsers.map(user =>
-    user.name === userName ? { ...user, active: !user.active } : user,
-  );
-
-  callback(updatedUsers);
+  return new Promise((resolve, reject)=> {
+    setTimeout(() => {
+      const updatedUsers = allUsers.map((user) =>
+        (user.name === userName ? { ...user, active: !user.active } : user));
+      resolve(updatedUsers);
+    }, 0)
+  })
 };
 
 const logger = updatedUsers => console.table(updatedUsers);
@@ -24,12 +27,8 @@ toggleUserState(users, 'Lux').then(logger);
 
 
 // old
-// const users = [
-//   { name: 'Mango', active: true },
-//   { name: 'Poly', active: false },
-//   { name: 'Ajax', active: true },
-//   { name: 'Lux', active: false },
-// ];
+// const users = [..............];
+// callback:
 // const toggleUserState = (allUsers, userName, callback) => {
 //   const updatedUsers = allUsers.map(user =>
 //     user.name === userName ? { ...user, active: !user.active } : user,

@@ -1,0 +1,16 @@
+.list {
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  padding: 80px;
+}
+.list__items {
+  align-items: center;
+  text-decoration: none;
+  font-size: 52px;
+}
+.list__items a {
+  text-decoration: none;
+}

@@ -12,8 +12,8 @@ const makeTransaction = (transaction, onSuccess, onError) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const canProcess = Math.random() > 0.3;
-      if (canProcess) {
-        resolve(transaction.id, delay);
+     if (canProcess) {
+        resolve({ id: transaction.id, time: delay });
       } else {
         reject(transaction.id);
       }
